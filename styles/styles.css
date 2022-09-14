@@ -107,6 +107,25 @@ html{
     margin-bottom: 20px;
 }
 
+/* Horizontal OR */
+.lp-content-divider{
+    display: flex;
+    width: 300px;
+    max-width: 380px;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 700;
+}
+.lp-content-divider div{
+    width: 100%;
+}
+.lp-content-divider-or{
+    display: flex;
+    justify-content: center;
+}
+
+
 /* Sign up button */
 .lp-content-signup{
     margin-top: 40px;

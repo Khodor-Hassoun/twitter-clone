@@ -1,0 +1,15 @@
+.landing-page-main{
+    display: flex;
+}
+.landing-image{
+    background-image: url('../assets/twitter-backgound.png');
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.landing-image img{
+    width: 347px;
+    height: 282px;
+}

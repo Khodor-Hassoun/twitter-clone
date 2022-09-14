@@ -18,6 +18,8 @@ html{
     background-color: #000;
     color: #E7E9EA;
 }
+
+/* Left side of main (Images) */
 .landing-image{
     background-image: url('../assets/twitter-backgound.png');
     /* width: 100vw;
@@ -31,7 +33,31 @@ html{
     height: 282px;
 }
 
+
+/* Right side of landing page (Sign in, Sign up) */
+.landing-page-container{
+    padding: 16px;
+}
 .landing-page-content{
     display: flex;
     flex-direction: column;
+    padding: 20px;
+}
+
+/* twitter logo 43x35 */
+.lp-content-image{
+    width: 43px;
+    height: 35px;
+}
+.lp-content-image img{
+    width: 100%;
+}
+
+/* Header 1 */
+.lp-content-header1{
+    margin: 48px 0;
+}
+.lp-content-header1 h1{
+    font-size: 64px;
+    letter-spacing: -1.2%;
 }

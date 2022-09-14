@@ -61,3 +61,47 @@ html{
     font-size: 64px;
     letter-spacing: -1.2%;
 }
+
+/* Header 2 */
+.lp-content-header2{
+    margin-bottom: 32px;
+}
+.lp-content-header2{
+    font-size: 31px;
+}
+
+/* Sign in form */
+.lp-content-signin{
+    /* display: flex;
+    flex-direction: column; */
+}
+.lp-content-form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    max-width: 380px;
+}
+.lp-content-form input{
+    background: none;
+    border-radius: 4px;
+    border: solid #333639;
+    margin-bottom: 20px;
+    height: 40px;
+    font-size: 17px;
+}
+.lp-content-form-button{
+    width: 300px;
+}
+.lp-content-form-button button{
+    width: 100%;
+    color:#1D9BF0;
+    background: none;
+    border: solid #536471;
+    border-radius: 100px;
+    padding: 8px 0;
+    font-size: 15px;
+}
+.lp-content-form-button p{
+    font-size: 11px;
+    color: #71767B;
+}

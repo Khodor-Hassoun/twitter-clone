@@ -29,7 +29,7 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 55%;
 }
 .landing-image img{
     width: 347px;
@@ -72,7 +72,7 @@ html{
 .lp-content-header2{
     margin-bottom: 32px;
 }
-.lp-content-header2{
+.lp-content-header2 h2{
     font-size: 31px;
 }
 
@@ -95,7 +95,11 @@ html{
     margin-bottom: 20px;
     height: 40px;
     font-size: 17px;
+    color: #E7E9EA;
 }
+/* .lp-content-form input::content{
+    color: #E7E9EA;
+} */
 .lp-content-form-button{
     width: 300px;
 }
@@ -173,7 +177,7 @@ html{
 
 /* Pop ups */
 .popup{
-    max-width: 80vw;
+    max-width: 50vw;
     min-width: 600px;
     max-height: 90vh;
     min-height: 400px;
@@ -186,12 +190,30 @@ html{
     flex-direction: column;
 }
 .popup-page-num{
-    font-size: 20px;
     font-weight: 700;
     display: flex;
 }
+.popup-page-num h2{
+    font-size: 20px;
+    font-weight: 700;
+}
+
 .popup-input-container{
     padding: 0 80px;
+    /* width: 80%; */
+}
+.popup-input-container h1{
+    font-size: 31px;
+    margin-bottom: 10px;
+}
+.popup-input-container button{
+    width: 100%;
+    color:#1D9BF0;
+    background: none;
+    border: solid #536471;
+    border-radius: 100px;
+    padding: 8px 0;
+    font-size: 15px;
 }
 .popup-input-content{
     font-size: 31px;
@@ -200,4 +222,40 @@ html{
 .popup-content-form{
     display: flex;
     flex-direction: column;
+}
+.popup-content-form > *{
+    margin-bottom: 10px;
+}
+.popup-content-form input{
+    background: none;
+    border-radius: 4px;
+    border: solid #333639;
+    margin-bottom: 20px;
+    height: 40px;
+    font-size: 17px;
+    color: #E7E9EA;
+    width: 60%;
+}
+.popup-content-form h2{
+    font-size: 15px;
+    font-weight: 700;
+}
+.form-dob-content{
+    width: 80%;
+}
+.form-dob{
+    margin-top: 10px;
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+.form-dob select{
+    background: none;
+    border-radius: 4px;
+    border: solid #333639;
+    margin-bottom: 20px;
+    height: 40px;
+    font-size: 17px;
+    color: #E7E9EA;
+    /* width: ; */
 }

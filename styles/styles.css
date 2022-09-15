@@ -11,6 +11,10 @@ html{
     font-size: 9.5px;
     font-family:'Poppins',sans-serif;
 }
+option{
+    background-color: #000;
+    color: #E7E9EA;
+}
 
 
 /* Landing page styles */
@@ -199,15 +203,18 @@ html{
 .popup-back-btn{
     height: 20px;
     width: 20px;
-    margin: 10px;
+    margin: 5px;
+    margin-right: 15px;
 }
 .popup-back-btn img{
     width: 100%;
 }
-
+/* .popup-header div:last-of-type{
+    margin-left: auto;
+} */
 .popup-contents{
-    margin: 10px 0;
-    padding: 0 80px;
+    margin: 15px 0;
+    padding: 0 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -248,8 +255,8 @@ html{
 .popup-contents button{
     width: 100%;
     color: #E7E9EA;
-    background-color: #1D9BF0;
+    background-color: #333639;
     border-radius: 100px;
     font-size: 15px;
-    padding: 8px 0;
+    padding: 10px 0;
 }

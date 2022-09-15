@@ -277,3 +277,29 @@ main{
     margin:15px 0;
     padding-right: 50px;
 }
+
+.side-feed{
+    width:350px;
+    padding: 0 2%;
+    flex-grow: 1;
+}
+.search{
+    display: flex;
+    height: 55px;
+    max-width:355px;
+    position: sticky;
+    top:0;
+    padding-top: 5px;
+    background-color: black;
+}
+.search input{
+    background-color:#212327 ;
+    border-radius: 9999px;
+    height: 45px;
+    width: 100%;
+    padding-left: 30px;
+    font-size: 1.7rem;
+    color: white;
+    line-height: 20px;
+    font-weight:500 ;
+}

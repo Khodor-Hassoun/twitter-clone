@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: black;
+    font-size: 9.5px;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+/* ---------- Header -------------------------------------------------- */
+
+a{
+    text-decoration: none;
+    color:white;
+    font-size: 1.1rem;
+    font-weight: 399.99;
+    line-height:35px;
+}
+
+.position-fixed {
+    position: fixed;
+    width: 250px;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header{
+    display:flex;
+    justify-content: flex-end;
+    padding: 4px 0px 10px 0;
+    height:100vh;
+    flex-grow: 1;
+}
+
+.nav-bar{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+}
+
+.nav-links{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height:70%;
+}
+
+.twitter-logo {
+    font-size: 32px;
+    color:rgb(194, 194, 194);
+}
+
+.nav-links a{
+     display: flex;
+     align-items: center;
+     font-size:2rem;
+     padding: 8px 25px 8px 8px;
+     width:fit-content;
+}
+
+.nav-links a svg{
+    font-size: 3rem;
+    margin-right:15px;
+}
+
+.nav-links a svg g{
+    fill:white;
+}
+
+.nav-links a:hover ,.main-account a:hover{
+    background-color: rgb(37, 37, 37);
+    border-radius: 9999px;
+}
+
+.nav-links a:first-child{
+    padding:8px 8px;
+}
+
+.tweet-button{
+    background-color:rgb(29,155,240);
+    width:90%;
+    height:55px;
+    border-radius: 9999px;
+    border:1px solid rgb(29,155,240) ;
+    margin-top:15px;
+    cursor: pointer;
+    font-size: 1.7rem;
+    color:white;
+    font-weight: 700;
+    padding: 15px 10px;
+    transition-duration: 0.2s;
+}
+
+.tweet-button:hover{
+    background-color: rgb(29,155,240,0.9);
+}
+
+.main-account{
+    width:90%;
+}
+
+.main-account a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:8px 10px 8px 15px;
+    margin-right: 10px;
+}
+
+.tweet-image{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+
+.account-details{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70%;
+    margin-left: 10px;
+    font-size:1.5rem;
+    line-height: 20px;
+}
+
+.account-name{
+    font-weight:520;
+}
+
+.account-username{
+    color:rgb(110,118,125);
+}
+

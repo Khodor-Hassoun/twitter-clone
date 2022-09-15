@@ -390,3 +390,57 @@ main{
     display: flex;
     justify-content: space-between;
 }
+
+/* ------------ Media Queries ------------- */
+
+@media screen and (max-width:1299px){
+    header{
+         width:10%;
+         padding: 10px 0;
+         
+    } 
+    main{
+         margin-left:10%;
+         width:90%
+
+    }
+    header span{
+        display:none; 
+    }
+    header .tweet-button{
+         width:55px;
+         border-radius:50%;
+         font-size: 1.4rem;
+    }
+    header .main-account{
+         display: flex;
+         justify-content: center;
+    }
+    header .main-account i{
+         display: none;
+    }
+    header .account-details{
+     display: none;
+    }
+    .nav-links{
+     align-items: center;
+    }
+    .nav-links a i{
+         margin-right:0;
+    }
+    .nav-links a, .main-account a{
+     padding: 10px 10px;
+    }
+
+}
+
+@media screen and (max-width:1005px){ 
+ main .main-feed{
+     width: 100%;
+ }
+ main .side-feed{
+     display: none;
+ }
+ 
+
+}

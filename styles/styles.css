@@ -177,9 +177,9 @@ html{
 
 /* Pop ups */
 .popup{
-    max-width: 50vw;
-    min-width: 600px;
-    max-height: 90vh;
+    /* max-width: 50vw; */
+    width: 600px;
+    /* height: 650px; */
     min-height: 400px;
     border-radius: 16px;
     background-color: #74c69d;
@@ -188,19 +188,32 @@ html{
     /* align-items: center; This centers the pop up */
     display: flex;
     flex-direction: column;
+    padding: 20px 0;
 }
 .popup-page-num{
     font-weight: 700;
     display: flex;
 }
+.popup-page-num >*{
+    margin: 10px;
+    align-self: center;
+}
 .popup-page-num h2{
     font-size: 20px;
     font-weight: 700;
+}
+.popup-page-num img{
+    height: 20px;
+    width: 20px;
 }
 
 .popup-input-container{
     padding: 0 80px;
     /* width: 80%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 .popup-input-container h1{
     font-size: 31px;
@@ -224,17 +237,17 @@ html{
     flex-direction: column;
 }
 .popup-content-form > *{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .popup-content-form input{
     background: none;
     border-radius: 4px;
     border: solid #333639;
-    margin-bottom: 20px;
-    height: 40px;
+    /* margin-bottom: 20px; */
+    height: 50px;
     font-size: 17px;
     color: #E7E9EA;
-    width: 60%;
+    width: 80%;
 }
 .popup-content-form h2{
     font-size: 15px;
@@ -246,16 +259,19 @@ html{
 .form-dob{
     margin-top: 10px;
     display: flex;
-    width: 60%;
+    /* width: 60%; */
     justify-content: space-between;
+}
+.form.dob div{
+    /* width: 40%; */
 }
 .form-dob select{
     background: none;
     border-radius: 4px;
     border: solid #333639;
     margin-bottom: 20px;
-    height: 40px;
+    height: 50px;
     font-size: 17px;
     color: #E7E9EA;
-    /* width: ; */
+    /* width: 33%; */
 }

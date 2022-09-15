@@ -400,7 +400,7 @@ main{
          
     } 
     main{
-         margin-left:10%;
+         margin-left:0%;
          width:90%
 
     }
@@ -424,6 +424,10 @@ main{
     }
     .nav-links{
      align-items: center;
+     width: 88px;
+    }
+    .position-fixed {
+        width: 88px;
     }
     .nav-links a i{
          margin-right:0;

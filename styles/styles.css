@@ -329,6 +329,49 @@ main{
     font-weight:500 ;
 }
 
+.search-results {
+    display: none;
+    flex-direction: column;
+    background-color: black;
+    width: 370px;
+    color: rgb(113, 118, 123);
+    font-size: 14px;
+    position: absolute;
+}
+
+.search-result .account-name {
+    color: white;
+    font-weight: 500;
+}
+
+.empty-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    color: white;
+    padding: 15px 11px;
+}
+
+.search-result {
+    height: 80px;
+    padding: 11px 15px;
+    display: flex;
+}
+
+.search-result img {
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    margin-right: 11px;
+    font-size:1.5rem;
+    line-height: 20px;
+}
+
+
+
+
+
 .follow{
     display: flex;
     flex-direction: column;
@@ -604,6 +647,11 @@ main{
     display: flex;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .flex-grow {
     flex-grow: 1;
 }
@@ -691,5 +739,22 @@ main{
     }
     .mobile-navbar {
         display: flex;
+    }
+    .new-tweet {
+        display: none;
+    }
+    .bg-img {
+        height: 130px;
+    }
+    .profile-image img {
+        height: 84px;
+        width: 84px;
+    }
+    .profile-image {
+        height: 84px;
+        width: 84px;
+    }
+    .edit {
+        height: 46px;
     }
 }

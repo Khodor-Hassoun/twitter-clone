@@ -12,12 +12,14 @@ html{
     font-family:'Poppins',sans-serif;
 }
 
+
 /* Landing page styles */
 .landing-page-main{
     display: flex;
     background-color: #000;
     color: #E7E9EA;
 }
+
 
 /* Left side of main (Images) */
 .landing-image{
@@ -45,6 +47,7 @@ html{
     padding: 20px;
 }
 
+
 /* twitter logo 43x35 */
 .lp-content-image{
     width: 43px;
@@ -53,6 +56,7 @@ html{
 .lp-content-image img{
     width: 100%;
 }
+
 
 /* Header 1 */
 .lp-content-header1{
@@ -63,6 +67,7 @@ html{
     letter-spacing: -1.2%;
 }
 
+
 /* Header 2 */
 .lp-content-header2{
     margin-bottom: 32px;
@@ -70,6 +75,7 @@ html{
 .lp-content-header2{
     font-size: 31px;
 }
+
 
 /* Sign in form */
 .lp-content-signin{
@@ -107,6 +113,7 @@ html{
     color: #71767B;
     margin-bottom: 20px;
 }
+
 
 /* Horizontal OR */
 .lp-content-divider{
@@ -146,6 +153,7 @@ html{
     margin-bottom: 20px;
 }
 
+
 /* Landing footer section */
 .landing-footer{
     display: flex;
@@ -160,4 +168,32 @@ html{
 .landing-footer p{
     margin-right: 20px;
     margin-bottom: 5px;
+}
+
+
+/* Pop ups */
+.popup{
+    max-width: 80vw;
+    min-width: 600px;
+    max-height: 90vh;
+    min-height: 400px;
+    border-radius: 16px;
+    background-color: #74c69d;
+    color: #E7E9EA;
+    margin: 0 auto;
+    /* align-items: center; This centers the pop up */
+    display: flex;
+    flex-direction: column;
+}
+.popup-page-num{
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+}
+.popup-input-container{
+    padding: 0 80px;
+}
+.popup-input-content{
+    font-size: 31px;
+    font-weight: 700;
 }

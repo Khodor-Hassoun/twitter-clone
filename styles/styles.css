@@ -309,17 +309,16 @@ button:hover{
 
 /* Popup 2 */
 .popup2{
-    height: 650px;
-    max-height: 650px;
+
+    height: 350px;
     width: 600px;
     background-color: #52b788;
     color: #E7E9EA;
     border-radius: 16px;
-    /* padding: 20px 0; */
-    /* overflow-y: scroll; */
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    justify-content: space-between;
 }
 .popup2-images{
     width: 100%;
@@ -341,4 +340,22 @@ button:hover{
     width: 150px;
     height: 150px;
     transform: translatey(50%)
+}   
+.popup2-images input{
+    display: none;
+}
+.popup2-btn{
+    /* margin: 0 auto;   */
+    margin-bottom: 10px;
+    /* align-items: flex-end;    */
+    display: flex;
+    justify-content: center;
+}
+.popup2-btn button{
+    width: 60%;
+    color: #E7E9EA;
+    background-color: #333639;
+    border-radius: 100px;
+    font-size: 15px;
+    padding: 10px 0;
 }

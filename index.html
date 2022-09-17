@@ -337,21 +337,26 @@
         </section>
     </div>
     <!-- Pop up for images -->
-    <section class="popup2">
-        <input style="display:none;" type="file" name="profile_background" id="profile_background">
-        <label for="profile_background">
-            <div class="popup2-images">
-                <input type="file" name="profile_picture" id="profile_picture">
-                <label for="profile_picture">
-                    <div class="popup2-profile">
-                        </div>
+    <div class="popup2-container">
+        <section class="popup22">
+            <form action="#" class="popup22-form">
+                <label for="background-img">
+                    <div class="back-img">
+                        <input type="file" name="background_picture" id="background-img">
+                    </div>
                 </label>
-            </div>
-        </label>
-        <div class="popup2-btn">
-            <button>Lets start!!</button>
-        </div>
-    </section>
+                <label for="profile-img">
+                    <div class="pop-pp">
+                        <input type="file" name="profile_picture" id="profile-img">
+                    </div>
+                </label>
+                
+                <div class="pop-btn">
+                    <button>Lets start</button>
+                </div>
+            </form>
+        </section>
+    </div>
 
     
     <script src="./scripts/landing.js"></script>

@@ -2,6 +2,8 @@
 const signupBtn = document.getElementById('signUp');
 const popContainer = document.querySelector('.popup-container');
 const closeBtn = document.querySelector('.popup-back-btn');
+const popContainer2 = document.querySelector('.popup2-container');
+const imgsBtn = document.querySelector('.pop-btn');
 
 // Below are primarly for the Sign Up api
 const registerForm = document.querySelector('.popup-contents');
@@ -22,6 +24,16 @@ signupBtn.addEventListener('click', ()=>{
 closeBtn.addEventListener('click',()=>{
     popContainer.classList.remove('show')
 })
+
+// registerBtn for popup2
+registerBtn.addEventListener('click',()=>{
+    popContainer.classList.remove('show')
+    popContainer2.classList.add('show2')
+})
+imgsBtn.addEventListener('click',()=>{
+    popContainer2.classList.remove('show2')
+})
+
 
 // send the sign up info to signUp.php
 // http://localhost/twitter-clone/apis/signUp.php ---> Sign up api

@@ -9,7 +9,7 @@
     $phone = $_POST['phone'];
     $month = $_POST['month'];
     $day = $_POST['day'];
-    $year = $_POST['month'];
+    $year = $_POST['year'];
 
 
     $dob = $year . "-" . $month . "-" . $day;

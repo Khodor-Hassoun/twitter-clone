@@ -83,7 +83,7 @@ header{
     fill:white;
 }
 
-.nav-links a:hover ,.main-account a:hover{
+.nav-links a:hover ,.main-account:hover{
     background-color: rgb(37, 37, 37);
     border-radius: 9999px;
 }
@@ -115,12 +115,16 @@ header{
     width:90%;
 }
 
-.main-account a{
+.main-account a, .main-account{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding:8px 10px 8px 15px;
     margin-right: 10px;
+}
+
+.main-account a {
+    padding: 0;
 }
 
 .tweet-image{

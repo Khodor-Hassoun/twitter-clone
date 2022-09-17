@@ -3,7 +3,7 @@ const searchresults =document.getElementById("search-results")
 const noSearch = document.getElementById("noSearch")
 let searches = []
 
-const searchItem = (id,name,pp,username) => {
+const searchItem = (id,name,pp,username) => { // constructs the search results
     const link = document.createElement("a")
     link.href = "profile.php"
     searchresults.appendChild(link)
@@ -42,7 +42,7 @@ const searchItem = (id,name,pp,username) => {
 }
 
 
-search.addEventListener("change", () => {
+search.addEventListener("change", () => { // searches for result on every change
     for(const result of searches){
         searchresults.removeChild(result)
     }
@@ -74,3 +74,22 @@ search.addEventListener("change", () => {
     }
 
 })
+
+// handling loout 
+
+const logout = document.getElementById("logout")
+
+logout.addEventListener("click", () => {
+    localStorage.removeItem("userId")
+})
+
+// handling main profile link 
+
+const profiles = document.querySelectorAll(".profile-link")
+
+for(const profile of profiles){
+    profile.addEventListener("click", () => {
+        localStorage.setItem("profileId", userId)
+    })
+    
+}

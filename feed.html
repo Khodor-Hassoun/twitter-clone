@@ -95,20 +95,11 @@
         </div>
         <div class="side-feed">
             <div class="search">
-                <input type="text" placeholder="Search Twitter">
+                <input id="search" type="text" placeholder="Search Twitter">
             </div>
-            <div class="search-results">
-                <div class="empty-search">
+            <div id="search-results" class="search-results">
+                <div id="noSearch" class="empty-search">
                     <p>Try searching for people.</p>
-                </div>
-                <div class="search-result">
-                    <div class="search-image">
-                        <img src="images/profile.png">
-                    </div>
-                    <div class="flex-column">
-                        <span class="account-name">Ali Ismail</span>
-                        <p class="account-username">@AliISmail</p>
-                    </div>
                 </div>
             </div>
             <div class="follow">
@@ -166,6 +157,7 @@
     </div>
 </main>
 <script src="scripts/index.js"></script>
+<script src="scripts/search.js"></script>
 </body>
 
 </html>

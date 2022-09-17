@@ -1,5 +1,5 @@
 localStorage.setItem("userId",3)
-let userId = localStorage.getItem("userId")
+const userId = localStorage.getItem("userId")
 // tweeting api connection and image extraction
 const tweetText = document.getElementById("new-tweet-text")
 const newTweetImages = document.getElementById("new-tweet-images")
@@ -119,7 +119,7 @@ const tweetAssemble = (id,name,username,pp,date,text,nb,images) => { // construc
 
     const tweettext = document.createElement("div")
     tweettext.classList.add("tweet-text")
-    tweettext.innerHTML = `ur mama`
+    tweettext.innerHTML = `<p>${text}</p>`
     tweetDetails.appendChild(tweettext)
 
     if(nb>0) {

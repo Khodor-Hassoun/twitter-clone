@@ -395,8 +395,32 @@ main{
     line-height: 20px;
 }
 
+.search-display{
+    display: flex;
+    flex-direction: column;
+}
 
+.search-result a{
+    padding: 0;
+    width: 100%;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+}
 
+.account-name-search {
+    font-size: 14px;
+    line-height: 21px;
+    color: white;
+    font-weight: 500;
+    padding: 0;
+}
+.account-username-search {
+    color: rgb(110,118,125);
+    font-size: 14px;
+    padding: 0;
+    line-height: 21px;
+}
 
 
 .follow{

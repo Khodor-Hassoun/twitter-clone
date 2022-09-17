@@ -26,13 +26,13 @@ closeBtn.addEventListener('click',()=>{
 })
 
 // registerBtn for popup2
-registerBtn.addEventListener('click',()=>{
-    popContainer.classList.remove('show')
-    popContainer2.classList.add('show2')
-})
-imgsBtn.addEventListener('click',()=>{
-    popContainer2.classList.remove('show2')
-})
+// registerBtn.addEventListener('click',()=>{
+//     popContainer.classList.remove('show')
+//     popContainer2.classList.add('show2')
+// })
+// imgsBtn.addEventListener('click',()=>{
+//     popContainer2.classList.remove('show2')
+// })
 
 
 // send the sign up info to signUp.php
@@ -47,7 +47,6 @@ registerForm.addEventListener('submit', (e)=>{
         })
         .then(data =>{
             for(let entry of data){
-                // console.log(entry);
                 if(userName.value === entry.username || email.value === entry.email || phone.value === entry.phone){
                     console.log('Repeated value in ',entry)
                     // e.preventDefault()

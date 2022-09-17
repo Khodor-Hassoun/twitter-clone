@@ -125,13 +125,14 @@
                 <div class="form-input">
                     <input type="text" name="name" id="name" placeholder="Name">
                 </div>
-                <div class="form-input">
+                <div class="form-input signup-error">
                     <input type="text" name="username" id="username" placeholder="@username">
+                    <p class="signup-userN-error">This username is already taken. Please try another</p>
                 </div>
-                <div class="form-input">
+                <div class="form-input signup-error">
                     <input type="email" name="email" id="email" placeholder="Email">
                 </div>
-                <div class="form-input">
+                <div class="form-input signup-error">
                     <input type="tel" name="phone" id="phone" placeholder="Phone">
                 </div>
                 <div class="form-input">
@@ -329,15 +330,17 @@
                 <div class="form-input">
                     <input type="password" name="password" id="password" placeholder="Password">
                 </div>
-                <!-- <div class="form-input">
-                    <input type="file" name="file" id="file">
-                </div> -->
+                <div class="signup-error-txt">
+                    <p>You might have entered wrong information or your username is taken</p>
+                </div>
                 <button id="register">Register</button>
             </form>
         </section>
     </div>
+
+
     <!-- Pop up for images -->
-    <div class="popup2-container">
+    <!-- <div class="popup2-container">
         <section class="popup22">
             <form action="#" class="popup22-form">
                 <label for="background-img">
@@ -356,7 +359,7 @@
                 </div>
             </form>
         </section>
-    </div>
+    </div> -->
 
     
     <script src="./scripts/landing.js"></script>

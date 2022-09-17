@@ -12,7 +12,8 @@ const phone = document.getElementById('phone');
 
 // Below are primarly for the Sign In api
 const signInForm = document.querySelector('.lp-content-form');
-
+const signInEmail = document.getElementById('signIn-email')
+const signInpassword = document.getElementById('signIn-pword')
 
 // signupBtn is for responsive popup
 signupBtn.addEventListener('click', ()=>{
@@ -58,5 +59,23 @@ registerForm.addEventListener('submit', (e)=>{
 
 
 // Send the sign in data and compare the values and return the id
+// http://localhost/twitter-clone/apis/signIn.php
+signInForm.addEventListener('submit',(e)=>{
+    e.preventDefault()
+    const formData = new FormData(signInForm);
+    fetch('http://localhost/twitter-clone/apis/signIn.php',{method: 'post', body: formData})
+        .then(res =>{
+            return res.json()
+        })
+        .then(data =>{
+            if(!data){
+                console.log('Thiiiiiiiiiiiiiiiissssss is NNUUUUUUUUUUULLLLLLLL')
+            }
+            else{
+                console.log(data)
+                localStorage.setItem("userId", data.id)
+            }
+        })
+})
 
 

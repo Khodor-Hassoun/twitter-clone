@@ -39,7 +39,12 @@
                     <form action="" class="lp-content-form">
                         <input type="text" name="email" id="signIn-email" placeholder="Email">
                         <input type="password" name="password" id="signIn-pword" placeholder="Password">
-
+                        <!-- Error message to be displayed when the user enters a wrong input -->
+                        <div class="lp-content-form-error hidden">
+                            <p>
+                                Looks like something went wrong. Try again
+                            </p>
+                        </div>
                         <!-- form button and fineprint -->
                         <div class="lp-content-form-button">
                             <button>Sign In</button>

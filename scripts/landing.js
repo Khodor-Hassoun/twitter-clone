@@ -70,9 +70,13 @@ signInForm.addEventListener('submit',(e)=>{
         .then(data =>{
             if(!data){
                 console.log('Thiiiiiiiiiiiiiiiissssss is NNUUUUUUUUUUULLLLLLLL')
+                signInForm.classList.add('signin-error')
+                signInForm.childNodes[7].classList.remove('hidden')
             }
             else{
                 console.log(data)
+                signInForm.classList.remove('signin-error')
+                signInForm.childNodes[7].classList.add('hidden')
                 localStorage.setItem("userId", data.id)
             }
         })

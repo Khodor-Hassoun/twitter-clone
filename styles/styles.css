@@ -128,6 +128,21 @@ button:hover{
     margin-bottom: 20px;
 }
 
+/* Sign in form error classes with javascript */
+.signin-error input{
+    border: solid #d00000;
+}
+.lp-content-form-error{
+    margin-bottom: 10px;
+}
+.lp-content-form-error p{
+    font-size: 11px;
+    color:#d00000;
+}
+.hidden{
+    display: none;
+}
+
 
 /* Horizontal OR */
 .lp-content-divider{

@@ -1,6 +1,7 @@
 const search = document.getElementById("search")
 const searchresults =document.getElementById("search-results")
-const searches = []
+const noSearch = document.getElementById("noSearch")
+let searches = []
 
 const searchItem = (id,name,pp,username) => {
     const link = document.createElement("a")
@@ -42,6 +43,10 @@ const searchItem = (id,name,pp,username) => {
 
 
 search.addEventListener("change", () => {
+    for(const result of searches){
+        searchresults.removeChild(result)
+    }
+    searches = []
     flag =1
     if(search.value == ""){
         searchresults.classList.remove("search-display")
@@ -58,6 +63,10 @@ search.addEventListener("change", () => {
         }),
         }).then(response => response.json()
         ).then(json => { 
+            if(json.length==0){
+                if(noSearch.style.display == "none") noSearch.style.display = "flex"
+                noSearch.innerHTML = "No Results"
+            }else noSearch.style.display = "none"
             for(const searchRes of json){
                 searchItem(searchRes.id,searchRes.name,searchRes.profile_picture,searchRes.username)
             }

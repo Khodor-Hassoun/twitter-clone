@@ -13,10 +13,12 @@
 
 
     $dob = $year . "-" . $month . "-" . $day;
+    $dobToDate = strtotime($dob);
+    $dob_sql = date("Y-m-d",$dobToDate);
     $joining_date = date('Y-m-d');
 
     $query = $mysqli->prepare("INSERT INTO users(name, username, email, phone, password, dob, joining_date ) VALUE (?, ?, ?, ?, ?, ?, ?)");
-    $query->bind_param("sssisss", $name, $username, $email, $phone, $password, $dob, $joining_date);
+    $query->bind_param("sssisss", $name, $username, $email, $phone, $password, $dob_sql, $joining_date);
     $query->execute();
     $response = [];
     $response["success"] = true;

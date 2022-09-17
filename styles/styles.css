@@ -18,7 +18,9 @@ option{
 button{
     cursor: pointer;
 }
-
+button:hover{
+    filter: brightness(150%);
+}
 
 /* Landing page styles */
 .landing-page-main{

@@ -301,6 +301,28 @@ main{
     padding-right: 50px;
 }
 
+.feed-images {
+    width:100%;
+    height: auto;
+    display: grid;
+}
+
+.feed-image {
+    width:100%
+}
+
+#main-feed {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+}
+
+#main-feed > a {
+    padding: 0;
+    width: 100%;
+}
+
 /* ----------- Side feed ------------- */
 
 .side-feed{
@@ -357,6 +379,11 @@ main{
     height: 80px;
     padding: 11px 15px;
     display: flex;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.search-result:hover {
+    background-color: rgb(37, 37, 37);
 }
 
 .search-result img {
@@ -521,12 +548,23 @@ main{
     margin-left: 15px;
 }
 
-.profile-image img {
+.profile-image input {
+    display: none;
+}
+
+.profile-image-input {
     width: 134px;
     height: 134px;
     border-radius: 50%;
     border: 2px black solid;
+    background-image: url(../images/profile.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
+
+
 
 .profile-details {
     padding: 0 15px;
@@ -655,6 +693,7 @@ main{
 .flex-grow {
     flex-grow: 1;
 }
+
 
 /* ------------ Media Queries ------------- */
 

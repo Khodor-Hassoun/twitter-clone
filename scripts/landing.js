@@ -3,12 +3,15 @@ const signupBtn = document.getElementById('signUp');
 const popContainer = document.querySelector('.popup-container');
 const closeBtn = document.querySelector('.popup-back-btn');
 
-// Below are primarly for the apis
+// Below are primarly for the Sign Up api
 const registerForm = document.querySelector('.popup-contents');
 const registerBtn = document.getElementById('register');
 const userName = document.getElementById('username');
 const email = document.getElementById('email');
 const phone = document.getElementById('phone');
+
+// Below are primarly for the Sign In api
+const signInForm = document.querySelector('.lp-content-form');
 
 
 // signupBtn is for responsive popup
@@ -19,13 +22,12 @@ closeBtn.addEventListener('click',()=>{
     popContainer.classList.remove('show')
 })
 
-// send the sign up info to api
+// send the sign up info to signUp.php
 // http://localhost/twitter-clone/apis/signUp.php ---> Sign up api
-// http://localhost/twitter-clone/apis/test.php ---> get
+// http://localhost/twitter-clone/apis/test.php ---> get data
 registerForm.addEventListener('submit', (e)=>{
     e.preventDefault()
     const formData = new FormData(registerForm);
-    // e.preventDefault()
     fetch("http://localhost/twitter-clone/apis/test.php")
         .then(res =>{
             return res.json()
@@ -52,4 +54,9 @@ registerForm.addEventListener('submit', (e)=>{
         .catch(e=>{
             console.log('Error', e)
         })
-}) //RegisterForm
+})
+
+
+// Send the sign in data and compare the values and return the id
+
+

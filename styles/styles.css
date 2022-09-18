@@ -424,4 +424,11 @@ button:hover{
     .lp-content-header1 h1{
         font-size: 40px;
     }
+    .landing-footer{
+        padding: 0;
+    }
+    .landing-footer p{
+        padding: 0;
+        margin: 4px;
+    }
 }

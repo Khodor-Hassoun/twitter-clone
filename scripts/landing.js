@@ -40,7 +40,7 @@ imgsBtn.addEventListener('click',()=>{
 registerForm.addEventListener('submit', (e)=>{
     e.preventDefault()
     const formData = new FormData(registerForm);
-    fetch("http://localhost/twitter-clone/apis/test.php")
+    fetch("http://localhost/twitter-clone/api/test.php")
         .then(res =>{
             return res.json()
         })
@@ -65,7 +65,7 @@ registerForm.addEventListener('submit', (e)=>{
             email.parentElement.classList.remove("signup-error");
             userName.parentElement.classList.remove("signup-error");
             phone.parentElement.classList.remove("signup-error");
-            return fetch("http://localhost/twitter-clone/apis/signUp.php",{method: 'post', body: formData})
+            return fetch("http://localhost/twitter-clone/api/signUp.php",{method: 'post', body: formData})
         })
         .then(req=>{
             console.log('REEEEEEEEEEEEQUESSSSSST SENT')
@@ -97,7 +97,7 @@ registerForm.addEventListener('submit', (e)=>{
 signInForm.addEventListener('submit',(e)=>{
     e.preventDefault()
     const formData = new FormData(signInForm);
-    fetch('http://localhost/twitter-clone/apis/signIn.php',{method: 'post', body: formData})
+    fetch('http://localhost/twitter-clone/api/signIn.php',{method: 'post', body: formData})
         .then(res =>{
             return res.json()
         })

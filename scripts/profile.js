@@ -24,7 +24,7 @@ const profileUsername = document.getElementById("profileUsername")
 const profileDate = document.getElementById("profileDate")
 const profileFollowing = document.getElementById("profileFollowing")
 const profileFollowers = document.getElementById("profileFollowers")
-const userId = localStorage.getItem("userId")
+let userId = localStorage.getItem("userId")
 let profileId = localStorage.getItem("profileId")
 
 

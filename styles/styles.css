@@ -390,7 +390,12 @@ button:hover{
 }
 
 
-
+.bg-img-prop {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
 
 
 /* Media queries for 800px width */

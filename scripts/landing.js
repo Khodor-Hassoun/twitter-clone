@@ -77,6 +77,13 @@ registerForm.addEventListener('submit', (e)=>{
             popContainer.classList.remove('show')
             popContainer2.classList.add('show2')
             console.log('data:', data)
+            return fetch('http://localhost/twitter-clone/api/signIn.php',{method: 'post', body: formData})
+        })
+        .then(res=>{
+            return res.json()
+        })
+        .then(data=>{
+            localStorage.setItem("userId", parseInt(data.id));
         })
         .catch(e=>{
             console.log('Error', e)
@@ -111,9 +118,63 @@ signInForm.addEventListener('submit',(e)=>{
                 console.log(data)
                 signInForm.classList.remove('signin-error')
                 signInForm.childNodes[7].classList.add('hidden')
-                localStorage.setItem("userId", data.id)
+                localStorage.setItem("userId", parseInt(data.id));
             }
         })
 })
 
 
+const bg = document.getElementById("profile-bg")
+const pp = document.getElementById("profile-image")
+const ppdiv = document.getElementById("ppdiv")
+const bgdiv = document.getElementById("bgdiv")
+
+const reader = new FileReader()
+let userId = localStorage.getItem('userId')
+bg.addEventListener("change", async () => {
+  reader.readAsDataURL(bg.files[0])
+  await delay(500)
+  fetch(`http://localhost/twitter-clone/api/picture-edit.php`
+  , {
+      method: 'POST', 
+      body:new URLSearchParams({
+        "userId":userId,
+        "bg": image,
+      }),
+      }).then(response => response.json()
+      ).then(json => { 
+        bgdiv.style.backgroundImage = `url(${json})`
+        bgdiv.classList.add("bg-img-prop")
+      })
+})
+
+pp.addEventListener("change", async () => {
+  reader.readAsDataURL(pp.files[0])
+  await delay(500)
+  fetch(`http://localhost/twitter-clone/api/picture-edit.php`
+  , {
+      method: 'POST', 
+      body:new URLSearchParams({
+        "userId":userId,
+        "pp": image,
+      }),
+      }).then(response => response.json()
+      ).then(json => { 
+        ppdiv.style.backgroundImage = `url(${json})`
+        ppdiv.classList.add("bg-img-prop")
+      })
+})
+
+
+
+
+reader.addEventListener("load", () => {
+  image = reader.result
+  console.log(image)
+})
+
+function delay(milliseconds){ // allows for delay
+  return new Promise(resolve => {
+      setTimeout(resolve, milliseconds);
+  });
+}

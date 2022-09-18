@@ -47,7 +47,7 @@
                         </div>
                         <!-- form button and fineprint -->
                         <div class="lp-content-form-button">
-                            <a href="#">
+                            <a href="feed.html">
                                 <button>Sign In</button>
                             </a>
                             <!-- <button>Sign In</button> -->
@@ -346,22 +346,24 @@
 
 
     <!-- Pop up for images -->
-    <div class="popup2-container">
+    <div class="popup2-container show2">
         <section class="popup22">
             <form action="#" class="popup22-form">
-                <label for="background-img">
-                    <div class="back-img">
-                        <input type="file" name="background_picture" id="background-img">
+                <input type="file" name="background_picture" id="profile-bg" style="display: none;">
+                <label for="profile-bg">
+                    <div id="bgdiv" class="back-img">
                     </div>
                 </label>
-                <label for="profile-img">
-                    <div class="pop-pp">
-                        <input type="file" name="profile_picture" id="profile-img">
+                <input type="file" name="profile_picture" id="profile-image">
+                <label for="profile-image">
+                    <div id="ppdiv" class="pop-pp">
                     </div>
                 </label>
                 
                 <div class="pop-btn">
-                    <button>Lets start</button>
+                    <a href="feed.html">
+                        <button>Lets start</button>
+                    </a>
                 </div>
             </form>
         </section>

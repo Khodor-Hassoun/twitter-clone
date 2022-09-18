@@ -59,12 +59,14 @@ registerForm.addEventListener('submit', (e)=>{
                     email.parentElement.classList.add('signup-error');
                     userName.parentElement.classList.add('signup-error');
                     phone.parentElement.classList.add('signup-error');
+                    signUpSuccess = false
 
                     // e.preventDefault()
                     return 'request invalid'
                     // put a class to add red text as a warning
                 }
             }
+            signUpSuccess = true
             userErrorMsg.classList.add("hidden");
             invalidSignUpMsg.classList.add("hidden");
             email.parentElement.classList.remove("signup-error");
@@ -73,7 +75,6 @@ registerForm.addEventListener('submit', (e)=>{
             return fetch("http://localhost/twitter-clone/apis/signUp.php",{method: 'post', body: formData})
         })
         .then(req=>{
-            signUpSuccess = true
             console.log('REEEEEEEEEEEEQUESSSSSST SENT')
             return req.json()
         })

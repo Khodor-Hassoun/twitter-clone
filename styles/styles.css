@@ -618,6 +618,12 @@ main{
     padding: 0 15px;
     height: 32px;
     border-radius: 9999px;
+    margin-left: 11px;
+}
+
+.profile-details >a{
+    padding: 0;
+    display: none;
 }
 
 .profile h6 {

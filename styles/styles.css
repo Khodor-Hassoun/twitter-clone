@@ -562,6 +562,9 @@ main{
     height: 200px;
     width: 100%;
     background-image: url(../images/profile-bg.jpg);
+}
+
+.bg-img-prop {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

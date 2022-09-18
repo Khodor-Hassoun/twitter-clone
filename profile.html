@@ -6,7 +6,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="styles/styles.css" rel="stylesheet">
-        <title>Twitter</title>
+        <title>Profile</title>
     </head>
         <!-- header -->
         <header>
@@ -29,14 +29,14 @@
                         </div>
                         <!-- main account -->
                         <div class="main-account">
-                            <a id="profile" href="profile.html">
+                            <a class="profile-link" href="profile.html">
                                 <img class="tweet-image feed-profile-img" src="images/profile.png" alt="profile-pic">
                                 <div class="account-details">
                                     <span id="feed-profile-name" class="account-name"></span>
                                     <span id="feed-profile-username" class="account-username"></span>
                                 </div>
                             </a>
-                            <a class="profile-link" href="profile.html">
+                            <a id="logout" href="profile.html">
                                 <i class="material-icons-outlined" style="color: white;cursor: pointer;">
                                     logout
                                 </i>
@@ -54,35 +54,33 @@
                             </div>
                             <div>
                                 <span>Profile</span>
-                                <p>0 Tweets</p>
                             </div>
                         </div>
                         <div class="profile">
-                            <div class="bg-img">
+                            <div id="profileBg" class="bg-img">
                                 <div class="profile-image">
                                     <input type="file" id="profile-image" accept="image/png, image/jpg ">
-                                    <label for="profile-image"><div class="profile-image-input"></div></label>
+                                    <label for="profile-image"><div id="profileImg" class="profile-image-input"></div></label>
                                 </div>
                             </div>
                             <div class="profile-details">
                                 <div class="edit">
                                     <button class="edit-btn">Edit Profile</button>
                                 </div>
-                                <h6>Ali Ismail</h6>
-                                <p>@aliIsmail</p>
+                                <h6 id="profileName">Ali Ismail</h6>
+                                <p id="profileUsername">@aliIsmail</p>
                                 <div class="flex-row">
                                     <img src="images/calender.jpg">
-                                    <p>Joined sep 2022</p>
+                                    <p id="profileDate">Joined sep 2022</p>
                                 </div>
                                 <div class="flex-row">
-                                    <p><span>0</span> Following</p>
-                                    <p><span>0</span> Followers</p>
+                                    <p id="profileFollowing"><span>0</span> Following</p>
+                                    <p id="profileFollowers"><span>0</span> Followers</p>
                                 </div>
                             </div>
                             <div class="profile-links">
                                 <ul class="flex-row">
                                     <li class="flex-row"><a>Tweets</a></li>
-                                    <li class="flex-row"><a>Likes</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -113,20 +111,11 @@
                     </div>
                     <div class="side-feed">
                         <div class="search">
-                            <input type="text" placeholder="Search Twitter">
+                            <input id="search" type="text" placeholder="Search Twitter">
                         </div>
-                        <div class="search-results">
-                            <div class="empty-search">
+                        <div id="search-results" class="search-results">
+                            <div id="noSearch" class="empty-search">
                                 <p>Try searching for people.</p>
-                            </div>
-                            <div class="search-result">
-                                <div class="search-image">
-                                    <img src="images/profile.png">
-                                </div>
-                                <div class="flex-column">
-                                    <span class="account-name">Ali Ismail</span>
-                                    <p class="account-username">@AliISmail</p>
-                                </div>
                             </div>
                         </div>
                         <div class="follow">

@@ -172,11 +172,6 @@ const tweetAssemble = (tweet, id, name, username, pp, date, text, nb, images, li
   tweeterName.innerHTML = `${name} <span class="tweeter-handle">@${username} <b>·</b> ${date}</span>`
   tweeterDetails.appendChild(tweeterName)
 
-  const more = document.createElement("i")
-  more.classList.add("material-icons-outlined")
-  more.innerHTML = "more_horiz"
-  tweeterDetails.appendChild(more)
-
   const tweettext = document.createElement("div")
   tweettext.classList.add("tweet-text")
   tweettext.innerHTML = `<p>${text}</p>`

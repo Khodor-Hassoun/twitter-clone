@@ -6,7 +6,7 @@ userId = localStorage.getItem("userId")
 
 const searchItem = (id,name,pp,username) => { // constructs the search results
     const link = document.createElement("a")
-    link.href = "profile.php"
+    link.href = "profile.html"
     searchresults.appendChild(link)
     searches.push(link)
 
@@ -49,11 +49,6 @@ search.addEventListener("change", () => { // searches for result on every change
     }
     searches = []
     flag =1
-    if(search.value == ""){
-        searchresults.classList.remove("search-display")
-        flag = 0
-    } 
-    if(!searchresults.classList.contains("search-display") && flag) searchresults.classList.add("search-display")
     if(flag){
         fetch(`http://localhost/twitter-clone/api/search.php`
         , {

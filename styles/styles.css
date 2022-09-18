@@ -365,6 +365,15 @@ main{
     position: absolute;
 }
 
+.search-results-mobile {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    width: 370px;
+    color: rgb(113, 118, 123);
+    font-size: 14px;
+}
+
 .search-result .account-name {
     color: white;
     font-weight: 500;
@@ -561,7 +570,6 @@ main{
     justify-content: flex-end;
     height: 200px;
     width: 100%;
-    background-image: url(../images/profile-bg.jpg);
 }
 
 .bg-img-prop {
@@ -589,7 +597,6 @@ main{
     height: 134px;
     border-radius: 50%;
     border: 2px black solid;
-    background-image: url(../images/profile.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -737,6 +744,10 @@ main{
 
 .display-none {
     display: none;
+}
+
+.margin-top-50px{
+    margin-top: 50px;
 }
 
 /* Popup profile */

@@ -206,7 +206,6 @@ button:hover{
     height: 650px;
     max-height: 650px;
     width: 600px;
-    background-color: #52b788;
     background-color: #000;
     color: #E7E9EA;
     border-radius: 16px;
@@ -322,11 +321,13 @@ button:hover{
 .popup22{
     width: 600px;
     height: 650px;
-    background-color: #52b788;
+    background-color: #000;
+    color: #E7E9EA;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 10px 0;
 }
 
 .popup22-form{
@@ -336,6 +337,7 @@ button:hover{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
 }
 .popup22-form input{
     display: none;
@@ -385,4 +387,41 @@ button:hover{
 .show2{
     pointer-events: all;
     opacity: 1;
+}
+
+
+
+
+
+/* Media queries for 800px width */
+@media only screen and (max-width: 800px){
+    .landing-page-main{
+        display: grid;
+        grid-template-areas: 
+        "g11"
+        "g21";
+        /* grid-template-rows: 80vh 20vh; */
+    }
+    .landing-page-main >*:nth-child(1){
+        grid-area: g21;
+        width: 100vw;
+    }
+    .landing-page-main >*:nth-child(2){
+        grid-area: g11;
+        padding: 0;
+        margin: 5vw;
+        width: 90vw;
+    }
+    .popup{
+        width: 100vw;
+    }
+    .popup22{
+        width: 100vw;
+    }
+
+}
+@media only screen and (max-width:400px){
+    .lp-content-header1 h1{
+        font-size: 40px;
+    }
 }

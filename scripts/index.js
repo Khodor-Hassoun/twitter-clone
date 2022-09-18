@@ -19,6 +19,7 @@ const tweetApi = () => {
         }),
         }).then(response => response.json()
         ).then(json => { console.log(json)
+            tweetText.value = "Tweeted"
         })
 }
 
@@ -26,19 +27,20 @@ tweet.addEventListener("click", async() => {
     if(newTweetImages.files[0]){
         reader.readAsDataURL(newTweetImages.files[0]);
     }
-    await delay(500)
+    await delay(1000)
     if(newTweetImages.files[1]){
         reader.readAsDataURL(newTweetImages.files[1]);
     }
-    await delay(500)
+    await delay(1000)
     if(newTweetImages.files[2]){
         reader.readAsDataURL(newTweetImages.files[2]);
     }
-    await delay(500)
+    await delay(1000)
     if(newTweetImages.files[3]){
         reader.readAsDataURL(newTweetImages.files[3]);
     }
-    tweetApi()
+    await delay(1000)
+        tweetApi()
 })
 
 reader.addEventListener("load", () => {
@@ -63,7 +65,7 @@ fetch(`http://localhost/twitter-clone/api/basic-user-home.php`
     , {
         method: 'POST', 
         body:new URLSearchParams({
-          "userId":userId,
+          "userId":localStorage.getItem("userId"),
         }),
         }).then(response => response.json()
         ).then(json => { 
@@ -120,29 +122,30 @@ const tweetAssemble = (tweet,id,name,username,pp,date,text,nb,images,liked) => {
     tweettext.innerHTML = `<p>${text}</p>`
     tweetDetails.appendChild(tweettext)
 
-    if(nb>0) { // checks for images and adjusts css accordingly
+    if (nb > 2) { // checks for images and adjusts css accordingly
         const tweetImages = document.createElement("div")
         tweetImages.classList.add("feed-images")
-        
-        if(nb==1){
-            tweetImages.style.gridTemplate = "repeat(1, 1fr) / repeat(1, 1fr)"
-        }else if(nb==2){
-            tweetImages.style.gridTemplate = "repeat(1, 1fr) / repeat(2, 1fr)"
-        }else if(nb==3){
-            tweetImages.style.gridTemplate = "repeat(2, 1fr) / repeat(2, 1fr)"
-        }else if(nb==4){
-            tweetImages.style.gridTemplate = "repeat(2, 1fr) / repeat(2, 1fr)"
-            
+    
+        if (nb == 3) {
+          tweetImages.style.gridTemplate = "repeat(1, 1fr) / repeat(1, 1fr)"
+        } else if (nb == 4) {
+          tweetImages.style.gridTemplate = "repeat(1, 1fr) / repeat(2, 1fr)"
+        } else if (nb == 5) {
+          tweetImages.style.gridTemplate = "repeat(2, 1fr) / repeat(2, 1fr)"
+        } else if (nb == 6) {
+          tweetImages.style.gridTemplate = "repeat(2, 1fr) / repeat(2, 1fr)"
+    
         }
+        console.log(images)
         let image
-        for(let i = 0 ; i<nb-1 ; i++){
-            image = document.createElement("img")
-            image.classList.add("feed-image")
-            image.src = images[i]
-            tweetImages.appendChild(image)
+        for (let i = 0 ; i < nb -2 ; i++) {
+          image = document.createElement("img")
+          image.classList.add("feed-image")
+          image.src = images[i]
+          tweetImages.appendChild(image)
         }
         tweetDetails.appendChild(tweetImages)
-    }
+      }
     const tweetIcons = document.createElement("div")
     tweetIcons.classList.add("tweet-icons")
     tweetDetails.appendChild(tweetIcons)

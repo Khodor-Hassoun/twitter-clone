@@ -177,22 +177,23 @@ const tweetAssemble = (tweet, id, name, username, pp, date, text, nb, images, li
   tweettext.innerHTML = `<p>${text}</p>`
   tweetDetails.appendChild(tweettext)
 
-  if (nb > 0) { // checks for images and adjusts css accordingly
+  if (nb > 2) { // checks for images and adjusts css accordingly
     const tweetImages = document.createElement("div")
     tweetImages.classList.add("feed-images")
 
-    if (nb == 1) {
+    if (nb == 3) {
       tweetImages.style.gridTemplate = "repeat(1, 1fr) / repeat(1, 1fr)"
-    } else if (nb == 2) {
-      tweetImages.style.gridTemplate = "repeat(1, 1fr) / repeat(2, 1fr)"
-    } else if (nb == 3) {
-      tweetImages.style.gridTemplate = "repeat(2, 1fr) / repeat(2, 1fr)"
     } else if (nb == 4) {
+      tweetImages.style.gridTemplate = "repeat(1, 1fr) / repeat(2, 1fr)"
+    } else if (nb == 5) {
+      tweetImages.style.gridTemplate = "repeat(2, 1fr) / repeat(2, 1fr)"
+    } else if (nb == 6) {
       tweetImages.style.gridTemplate = "repeat(2, 1fr) / repeat(2, 1fr)"
 
     }
+    console.log(images)
     let image
-    for (let i = 0; i < nb - 1; i++) {
+    for (let i = 0 ; i < nb -2 ; i++) {
       image = document.createElement("img")
       image.classList.add("feed-image")
       image.src = images[i]
@@ -250,7 +251,7 @@ fetch(`http://localhost/twitter-clone/api/feed.php` // calls the api for feed tw
   , {
     method: 'POST',
     body: new URLSearchParams({
-      "profileId": profileId,
+      "profileId": localStorage.getItem("profileId"),
     }),
   }).then(response => response.json()
   ).then(json => {

@@ -6,7 +6,7 @@ userId = localStorage.getItem("userId")
 
 const searchItem = (id,name,pp,username) => { // constructs the search results
     const link = document.createElement("a")
-    link.href = "profile.php"
+    link.href = "profile.html"
     searchresults.appendChild(link)
     searches.push(link)
 

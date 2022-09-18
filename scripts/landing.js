@@ -1,3 +1,4 @@
+let userId
 // Below are for the popup responsiveness
 const signupBtn = document.getElementById('signUp');
 const popContainer = document.querySelector('.popup-container');
@@ -84,6 +85,7 @@ registerForm.addEventListener('submit', (e)=>{
         })
         .then(data=>{
             localStorage.setItem("userId", parseInt(data.id));
+            userId=parseInt(data.id)
         })
         .catch(e=>{
             console.log('Error', e)
@@ -119,6 +121,7 @@ signInForm.addEventListener('submit',(e)=>{
                 signInForm.classList.remove('signin-error')
                 signInForm.childNodes[7].classList.add('hidden')
                 localStorage.setItem("userId", parseInt(data.id));
+                window.open("feed.html")
             }
         })
 })
@@ -130,7 +133,7 @@ const ppdiv = document.getElementById("ppdiv")
 const bgdiv = document.getElementById("bgdiv")
 
 const reader = new FileReader()
-let userId = localStorage.getItem('userId')
+userId = localStorage.getItem('userId')
 bg.addEventListener("change", async () => {
   reader.readAsDataURL(bg.files[0])
   await delay(500)
@@ -138,7 +141,7 @@ bg.addEventListener("change", async () => {
   , {
       method: 'POST', 
       body:new URLSearchParams({
-        "userId":userId,
+        "userId":localStorage.getItem('userId'),
         "bg": image,
       }),
       }).then(response => response.json()
@@ -155,7 +158,7 @@ pp.addEventListener("change", async () => {
   , {
       method: 'POST', 
       body:new URLSearchParams({
-        "userId":userId,
+        "userId":localStorage.getItem('userId'),
         "pp": image,
       }),
       }).then(response => response.json()

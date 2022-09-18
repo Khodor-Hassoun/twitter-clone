@@ -54,7 +54,7 @@ fetch(`http://localhost/twitter-clone/api/basic-user-home.php` // calls api for 
 
 localStorage.setItem("userId", 3)
 localStorage.setItem("profileId", 1)
-console.log(profileId,userId)
+console.log(profileId, userId)
 
 // adjusting the page accroding to if he is the owner of the profile or not
 
@@ -116,138 +116,152 @@ else {
 
 const mainFeed = document.getElementById("main-feed")
 
-const tweetAssemble = (tweet,id,name,username,pp,date,text,nb,images,liked) => { // constructs new tweets
-    const link = document.createElement("a")
-    link.href = "profile.html"
-    
-
-    const feedTweet = document.createElement("div")
-    feedTweet.classList.add("feed-tweet")
-    link.appendChild(feedTweet)
-    mainFeed.appendChild(feedTweet)
-
-    const tweeterImg = document.createElement("img")
-    tweeterImg.classList.add("tweet-image")
-    tweeterImg.src = pp
-    link.appendChild(tweeterImg)
-    feedTweet.appendChild(link)
-    
-    tweeterImg.addEventListener("click", (e) => {
-        e.stopPropagation()
-        localStorage.setItem("profileId", id )
-        console.log(id)
-    })
-
-    const tweetDetails = document.createElement("div")
-    tweetDetails.classList.add("feed-tweet-details")
-    feedTweet.appendChild(tweetDetails)
+const tweetAssemble = (tweet, id, name, username, pp, date, text, nb, images, liked) => { // constructs new tweets
+  const link = document.createElement("a")
+  link.href = "profile.html"
 
 
-    const tweeterDetails = document.createElement("div")
-    tweeterDetails.classList.add("tweeter-details")
-    tweetDetails.appendChild(tweeterDetails)
+  const feedTweet = document.createElement("div")
+  feedTweet.classList.add("feed-tweet")
+  link.appendChild(feedTweet)
+  mainFeed.appendChild(feedTweet)
 
-    const tweeterName = document.createElement("a")
-    tweeterName.classList.add("tweeter-name")
-    tweeterName.innerHTML = `${name} <span class="tweeter-handle">@${username} <b>·</b> ${date}</span>`
-    tweeterDetails.appendChild(tweeterName)
+  const tweeterImg = document.createElement("img")
+  tweeterImg.classList.add("tweet-image")
+  tweeterImg.src = pp
+  link.appendChild(tweeterImg)
+  feedTweet.appendChild(link)
 
-    const more = document.createElement("i")
-    more.classList.add("material-icons-outlined")
-    more.innerHTML = "more_horiz"
-    tweeterDetails.appendChild(more)
+  tweeterImg.addEventListener("click", (e) => {
+    e.stopPropagation()
+    localStorage.setItem("profileId", id)
+    console.log(id)
+  })
 
-    const tweettext = document.createElement("div")
-    tweettext.classList.add("tweet-text")
-    tweettext.innerHTML = `<p>${text}</p>`
-    tweetDetails.appendChild(tweettext)
+  const tweetDetails = document.createElement("div")
+  tweetDetails.classList.add("feed-tweet-details")
+  feedTweet.appendChild(tweetDetails)
 
-    if(nb>0) { // checks for images and adjusts css accordingly
-        const tweetImages = document.createElement("div")
-        tweetImages.classList.add("feed-images")
-        
-        if(nb==1){
-            tweetImages.style.gridTemplate = "repeat(1, 1fr) / repeat(1, 1fr)"
-        }else if(nb==2){
-            tweetImages.style.gridTemplate = "repeat(1, 1fr) / repeat(2, 1fr)"
-        }else if(nb==3){
-            tweetImages.style.gridTemplate = "repeat(2, 1fr) / repeat(2, 1fr)"
-        }else if(nb==4){
-            tweetImages.style.gridTemplate = "repeat(2, 1fr) / repeat(2, 1fr)"
-            
-        }
-        let image
-        for(let i = 0 ; i<nb-1 ; i++){
-            image = document.createElement("img")
-            image.classList.add("feed-image")
-            image.src = images[i]
-            tweetImages.appendChild(image)
-        }
-        tweetDetails.appendChild(tweetImages)
+
+  const tweeterDetails = document.createElement("div")
+  tweeterDetails.classList.add("tweeter-details")
+  tweetDetails.appendChild(tweeterDetails)
+
+  const tweeterName = document.createElement("a")
+  tweeterName.classList.add("tweeter-name")
+  tweeterName.innerHTML = `${name} <span class="tweeter-handle">@${username} <b>·</b> ${date}</span>`
+  tweeterDetails.appendChild(tweeterName)
+
+  const more = document.createElement("i")
+  more.classList.add("material-icons-outlined")
+  more.innerHTML = "more_horiz"
+  tweeterDetails.appendChild(more)
+
+  const tweettext = document.createElement("div")
+  tweettext.classList.add("tweet-text")
+  tweettext.innerHTML = `<p>${text}</p>`
+  tweetDetails.appendChild(tweettext)
+
+  if (nb > 0) { // checks for images and adjusts css accordingly
+    const tweetImages = document.createElement("div")
+    tweetImages.classList.add("feed-images")
+
+    if (nb == 1) {
+      tweetImages.style.gridTemplate = "repeat(1, 1fr) / repeat(1, 1fr)"
+    } else if (nb == 2) {
+      tweetImages.style.gridTemplate = "repeat(1, 1fr) / repeat(2, 1fr)"
+    } else if (nb == 3) {
+      tweetImages.style.gridTemplate = "repeat(2, 1fr) / repeat(2, 1fr)"
+    } else if (nb == 4) {
+      tweetImages.style.gridTemplate = "repeat(2, 1fr) / repeat(2, 1fr)"
+
     }
-    const tweetIcons = document.createElement("div")
-    tweetIcons.classList.add("tweet-icons")
-    tweetDetails.appendChild(tweetIcons)
+    let image
+    for (let i = 0; i < nb - 1; i++) {
+      image = document.createElement("img")
+      image.classList.add("feed-image")
+      image.src = images[i]
+      tweetImages.appendChild(image)
+    }
+    tweetDetails.appendChild(tweetImages)
+  }
+  const tweetIcons = document.createElement("div")
+  tweetIcons.classList.add("tweet-icons")
+  tweetDetails.appendChild(tweetIcons)
 
-    const like = document.createElement("i")
-    like.classList.add("material-icons-outlined")
-    like.innerHTML = `favorite_border`
-    like.style.cursor = "pointer"
-    if(liked == "1") like.style.color = "red"
-    tweetIcons.appendChild(like)
+  const like = document.createElement("i")
+  like.classList.add("material-icons-outlined")
+  like.innerHTML = `favorite_border`
+  like.style.cursor = "pointer"
+  if (liked == "1") like.style.color = "red"
+  tweetIcons.appendChild(like)
 
-    like.addEventListener("click", (e) => {
-        e.stopPropagation()
-        fetch(`http://localhost/twitter-clone/api/like.php` // calls the api for like/unlike
-    , {
-        method: 'POST', 
-        body:new URLSearchParams({
-          "userId":userId,
+  like.addEventListener("click", (e) => {
+    e.stopPropagation()
+    fetch(`http://localhost/twitter-clone/api/like.php` // calls the api for like/unlike
+      , {
+        method: 'POST',
+        body: new URLSearchParams({
+          "userId": userId,
           "tweet": tweet,
         }),
-        }).then(response => response.json()
-        ).then(json => { 
-            if(json == "added"){
-                like.style.color = "red"
-            }else like.style.color = "rgb(110,118,125)"
-        })
+      }).then(response => response.json()
+      ).then(json => {
+        if (json == "added") {
+          like.style.color = "red"
+        } else like.style.color = "rgb(110,118,125)"
+      })
 
-    })
+  })
 
 }
 
-const checkLiked = (tweet,nb,imgArr) => {// calls the api for checking if a tweet is liked or not and then adds the tweet to the feed
-    fetch(`http://localhost/twitter-clone/api/check-liked.php` 
+const checkLiked = (tweet, nb, imgArr) => {// calls the api for checking if a tweet is liked or not and then adds the tweet to the feed
+  fetch(`http://localhost/twitter-clone/api/check-liked.php`
     , {
-        method: 'POST', 
-        body:new URLSearchParams({
-          "userId":userId,
-          "tweet":tweet.tweet,
-        }),
-        }).then(response => response.json()
-        ).then(json => {
-            tweetAssemble(tweet.tweet,tweet.id,tweet.name,tweet.username,tweet.profile_picture,tweet.date,tweet.text,nb,imgArr,json)
-        })
+      method: 'POST',
+      body: new URLSearchParams({
+        "userId": userId,
+        "tweet": tweet.tweet,
+      }),
+    }).then(response => response.json()
+    ).then(json => {
+      tweetAssemble(tweet.tweet, tweet.id, tweet.name, tweet.username, tweet.profile_picture, tweet.date, tweet.text, nb, imgArr, json)
+    })
 
 }
 
 fetch(`http://localhost/twitter-clone/api/feed.php` // calls the api for feed tweets and then calls checkLiked
-    , {
-        method: 'POST', 
-        body:new URLSearchParams({
-          "profileId":profileId,
-        }),
-        }).then(response => response.json()
-        ).then(json => { 
-            console.log(json)
-            let imgArr= []
-            for(const tweet of json){
-                if(tweet.images != null){
-                    imgArr = tweet.images.split(" ")
-                    nb = imgArr.length
-                }else {
-                    nb = 0
-                }
-                checkLiked(tweet,nb,imgArr)
-            }
-        })
+  , {
+    method: 'POST',
+    body: new URLSearchParams({
+      "profileId": profileId,
+    }),
+  }).then(response => response.json()
+  ).then(json => {
+    console.log(json)
+    let imgArr = []
+    for (const tweet of json) {
+      if (tweet.images != null) {
+        imgArr = tweet.images.split(" ")
+        nb = imgArr.length
+      } else {
+        nb = 0
+      }
+      checkLiked(tweet, nb, imgArr)
+    }
+  })
+
+
+// Edit profile form handling
+
+const editName = document.getElementById("name")
+const editUsername = document.getElementById("username")
+const editEmail = document.getElementById("email")
+const editPhone = document.getElementById("phone")
+const editMonth = document.getElementById("month")
+const editDay = document.getElementById("day")
+const editYear = document.getElementById("year")
+const editPassword = document.getElementById("password")
+const Edit = document.getElementById("edit")
+

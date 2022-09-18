@@ -2,7 +2,7 @@ const search = document.getElementById("search")
 const searchresults =document.getElementById("search-results")
 const noSearch = document.getElementById("noSearch")
 let searches = []
-userId = localStorage.getItem("userId")
+let userId = localStorage.getItem("userId")
 
 const searchItem = (id,name,pp,username) => { // constructs the search results
     const link = document.createElement("a")
@@ -89,3 +89,11 @@ for(const profile of profiles){
     })
     
 }
+
+// handling profile link in navbar
+
+const myProfile = document.getElementById("myProfile")
+
+myProfile.addEventListener("click",() => {
+    localStorage.setItem("profileId", userId )
+})

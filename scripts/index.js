@@ -1,5 +1,5 @@
-localStorage.setItem("userId",3)
-const userId = localStorage.getItem("userId")
+
+let userId = localStorage.getItem("userId")
 // tweeting api connection and image extraction
 const tweetText = document.getElementById("new-tweet-text")
 const newTweetImages = document.getElementById("new-tweet-images")
@@ -215,3 +215,10 @@ fetch(`http://localhost/twitter-clone/api/feed.php` // calls the api for feed tw
             }
         })
 
+
+        //home bar profile button
+const ownProfile = document.getElementById("ownProfile")
+
+ownProfile.addEventListener("click", () => {
+    localStorage.setItem("profileId", userId)
+})

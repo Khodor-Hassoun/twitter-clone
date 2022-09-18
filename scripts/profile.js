@@ -1,3 +1,19 @@
+
+// declaring edit profile elements to fill them later
+const editHeader = document.getElementById("header")
+const editName = document.getElementById("name")
+const editUsername = document.getElementById("username")
+const editEmail = document.getElementById("email")
+const editPhone = document.getElementById("phone")
+const editMonth = document.getElementById("month")
+const editDay = document.getElementById("day")
+const editYear = document.getElementById("year")
+const editPassword = document.getElementById("password")
+const Edit = document.getElementById("edit")
+
+
+
+//adding profile data to profile page
 const sideName = document.getElementById("feed-profile-name")
 const sideUsername = document.getElementById("feed-profile-username")
 const sideImg = document.getElementById("feed-profile-image")
@@ -21,18 +37,24 @@ fetch(`http://localhost/twitter-clone/api/profile.php` // calls api to fille the
     }),
   }).then(response => response.json()
   ).then(json => {
-    profileImg.src = json[0].profile_picture
-    console.log(`../${json[0].profile_background}`)
-    console.log(`../${json[0].profile_picture}`)
     profileBg.style.backgroundImage = `url(${json[0].profile_background})`
     profileBg.classList.add("bg-img-prop")
     profileImg.style.backgroundImage = `url(${json[0].profile_picture})`
     profileImg.classList.add("bg-img-prop")
     profileUsername.innerHTML = json[0].username
+    console.log(json[0].username)
+    editUsername.value = json[0].username
     profileName.innerHTML = json[0].name
+    editName.value = json[0].name
+    editEmail.value = json[0].email
+    editPhone.value = json[0].phone
     profileDate.innerHTML = json[0].joining_date
     profileFollowing.innerHTML = `<span>${json[1][0].nb}</span> Following`
     profileFollowers.innerHTML = `<span>${json[2][0].nb}</span> Following`
+    date = json[0].dob.split("-")
+    editYear.value=date[0]
+    editMonth.value =parseInt(date[1])
+    editDay.value=date[2]
   })
 
 const profileImages = document.querySelectorAll(".feed-profile-img")
@@ -52,17 +74,15 @@ fetch(`http://localhost/twitter-clone/api/basic-user-home.php` // calls api for 
     }
   })
 
-localStorage.setItem("userId", 3)
-localStorage.setItem("profileId", 1)
-console.log(profileId, userId)
-
 // adjusting the page accroding to if he is the owner of the profile or not
 
 const button = document.getElementById("profile-button")
 const blockBtnLink = document.getElementById("block-button-link")
+const popup = document.querySelector(".popup-container")
 
 if (userId == profileId) {
-  button.addEventListener("click", {
+  button.addEventListener("click",() => {
+    popup.classList.add("show")
 
   })
 }
@@ -255,13 +275,100 @@ fetch(`http://localhost/twitter-clone/api/feed.php` // calls the api for feed tw
 
 // Edit profile form handling
 
-const editName = document.getElementById("name")
-const editUsername = document.getElementById("username")
-const editEmail = document.getElementById("email")
-const editPhone = document.getElementById("phone")
-const editMonth = document.getElementById("month")
-const editDay = document.getElementById("day")
-const editYear = document.getElementById("year")
-const editPassword = document.getElementById("password")
-const Edit = document.getElementById("edit")
+document.getElementById("close").addEventListener("click", () => { // closes the popup on x
+  popup.classList.remove("show")
+})
 
+Edit.addEventListener('click', (e) => {
+  e.preventDefault()
+
+  fetch(`http://localhost/twitter-clone/api/edit.php` // calls the api for feed tweets and then calls checkLiked
+  , {
+    method: 'POST',
+    body: new URLSearchParams({
+      "userId": userId,
+      "username": editUsername.value,
+      "email": editEmail.value,
+      "phone": editPhone.value,
+      "dob": editYear.value + "-" + editMonth.value + "-" + editDay.value,
+      "password": editPassword.value,
+      "name": editName.value,
+    }),
+  }).then(response => response.json()
+  ).then(json => {
+    console.log(editUsername.value)
+    if(json[3]){
+      editHeader.innerHTML = "Profile updated!"
+    }else{
+      if(json[0]) {
+        editUsername.parentElement.classList.add("signup-error")
+      }
+      if(json[1]) {
+        editEmail.parentElement.classList.add("signup-error")
+      }
+      if(json[2]) {
+        editPhone.parentElement.classList.add("signup-error")
+      }
+    }
+  })
+})
+
+
+// handling profile image change 
+
+const bg = document.getElementById("profile-bg")
+const pp = document.getElementById("profile-image")
+const reader = new FileReader()
+
+if(userId != profileId){
+  bg.disabled = "true"  
+  pp.disabled = "true"  
+}
+
+bg.addEventListener("change", async () => {
+  reader.readAsDataURL(bg.files[0])
+  await delay(500)
+  fetch(`http://localhost/twitter-clone/api/picture-edit.php`
+  , {
+      method: 'POST', 
+      body:new URLSearchParams({
+        "userId":userId,
+        "bg": image,
+      }),
+      }).then(response => response.json()
+      ).then(json => { 
+        profileBg.style.backgroundImage = `url(${json})`
+        profileBg.classList.add("bg-img-prop")
+      })
+})
+
+pp.addEventListener("change", async () => {
+  reader.readAsDataURL(pp.files[0])
+  await delay(500)
+  fetch(`http://localhost/twitter-clone/api/picture-edit.php`
+  , {
+      method: 'POST', 
+      body:new URLSearchParams({
+        "userId":userId,
+        "pp": image,
+      }),
+      }).then(response => response.json()
+      ).then(json => { 
+        profileImg.style.backgroundImage = `url(${json})`
+        profileImg.classList.add("bg-img-prop")
+      })
+})
+
+
+
+
+reader.addEventListener("load", () => {
+  image = reader.result
+  console.log(image)
+})
+
+function delay(milliseconds){ // allows for delay
+  return new Promise(resolve => {
+      setTimeout(resolve, milliseconds);
+  });
+}

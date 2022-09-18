@@ -568,6 +568,7 @@ main{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .profile-image {
@@ -676,6 +677,9 @@ main{
     background-color: rgb(37, 37, 37);
 }
 
+.edit > a {
+    display: none;
+}
 
 /* Mobile navbar */
 
@@ -944,11 +948,18 @@ main{
     .bg-img {
         height: 130px;
     }
-    .profile-image img {
+    .profile-bg {
+        height: 130px;
+    }
+    .profile-image-input{
         height: 84px;
         width: 84px;
     }
-    .profile-image {
+    .profile-image div{
+        height: 84px;
+        width: 84px;
+    }
+    .profile-image{
         height: 84px;
         width: 84px;
     }

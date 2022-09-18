@@ -616,6 +616,13 @@ header{
     color: inherit;
 }
 
+.search-mobile {
+    font-size: 14px;
+    background-color: black;
+    border: 0;
+    color:white;
+}
+
 .account-name-search {
     font-size: 14px;
     line-height: 21px;

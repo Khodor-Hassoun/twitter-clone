@@ -4,6 +4,9 @@ const popContainer = document.querySelector('.popup-container');
 const closeBtn = document.querySelector('.popup-back-btn');
 const popContainer2 = document.querySelector('.popup2-container');
 const imgsBtn = document.querySelector('.pop-btn');
+const userErrorMsg = document.querySelector('.signup-userN-error')
+const invalidSignUpMsg = document.querySelector('.signup-error-txt')
+let signUpSuccess = false
 
 // Below are primarly for the Sign Up api
 const registerForm = document.querySelector('.popup-contents');
@@ -47,16 +50,30 @@ registerForm.addEventListener('submit', (e)=>{
         })
         .then(data =>{
             for(let entry of data){
-                if(userName.value === entry.username || email.value === entry.email || phone.value === entry.phone){
-                    console.log('Repeated value in ',entry)
+                if(userName.value === entry.username){
+                    userErrorMsg.classList.remove('hidden')
+                }
+                if(userName.value === entry.username || email.value === entry.email || parseInt(phone.value) === entry.phone){
+                    console.log('Repeated value in ',entry);
+                    invalidSignUpMsg.classList.remove("hidden");
+                    email.parentElement.classList.add('signup-error');
+                    userName.parentElement.classList.add('signup-error');
+                    phone.parentElement.classList.add('signup-error');
+
                     // e.preventDefault()
                     return 'request invalid'
                     // put a class to add red text as a warning
                 }
             }
+            userErrorMsg.classList.add("hidden");
+            invalidSignUpMsg.classList.add("hidden");
+            email.parentElement.classList.remove("signup-error");
+            userName.parentElement.classList.remove("signup-error");
+            phone.parentElement.classList.remove("signup-error");
             return fetch("http://localhost/twitter-clone/apis/signUp.php",{method: 'post', body: formData})
         })
         .then(req=>{
+            signUpSuccess = true
             console.log('REEEEEEEEEEEEQUESSSSSST SENT')
             return req.json()
         })

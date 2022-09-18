@@ -14,7 +14,7 @@ if(isset($_POST["userId"])){
 }else if (isset($_POST["profileId"])){
     $profileId = $_POST["profileId"];
 
-    $query = $mysqli->prepare("SELECT u.id, u.name, u.username, u.profile_picture,t.id as tweet, t.date, t.text, t.images FROM `users` as u, tweets as t WHERE u.id = t.id and t.user_id = $profileId and u.id = $profileId");
+    $query = $mysqli->prepare("SELECT u.id, u.name, u.username, u.profile_picture,t.id as tweet, t.date, t.text, t.images FROM `users` as u, tweets as t WHERE u.id = t.user_id and u.id = $profileId");
     $query->execute();
     $array = $query->get_result();
 

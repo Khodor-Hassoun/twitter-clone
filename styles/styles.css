@@ -1,3 +1,5 @@
+
+/* Global styles */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     margin: 0;
@@ -10,6 +12,198 @@ html{
     font-size: 9.5px;
     font-family:'Poppins',sans-serif;
 }
+option{
+    background-color: #000;
+    color: #E7E9EA;
+}
+button{
+    cursor: pointer;
+}
+button:hover{
+    filter: brightness(150%);
+}
+
+/* Landing page styles */
+.landing-page-main{
+    display: flex;
+    background-color: #000;
+    color: #E7E9EA;
+}
+
+
+/* Left side of main (Images) */
+.landing-image{
+    background-image: url('../images/twitter-backgound.png');
+    /* width: 100vw;
+    height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+}
+.landing-image img{
+    width: 347px;
+    height: 282px;
+}
+
+
+/* Right side of landing page (Sign in, Sign up) */
+.landing-page-container{
+    padding: 16px;
+}
+.landing-page-content{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+/* twitter logo 43x35 */
+.lp-content-image{
+    width: 43px;
+    height: 35px;
+}
+.lp-content-image img{
+    width: 100%;
+}
+
+
+/* Header 1 */
+.lp-content-header1{
+    margin: 48px 0;
+}
+.lp-content-header1 h1{
+    font-size: 64px;
+    letter-spacing: -1.2%;
+}
+
+
+/* Header 2 */
+.lp-content-header2{
+    margin-bottom: 32px;
+}
+.lp-content-header2 h2{
+    font-size: 31px;
+}
+
+
+/* Sign in form */
+.lp-content-signin{
+    /* display: flex;
+    flex-direction: column; */
+}
+.lp-content-form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    max-width: 380px;
+}
+.lp-content-form input{
+    background: none;
+    border-radius: 4px;
+    border: solid #333639;
+    margin-bottom: 20px;
+    height: 40px;
+    font-size: 17px;
+    color: #E7E9EA;
+}
+/* .lp-content-form input::content{
+    color: #E7E9EA;
+} */
+.lp-content-form-button{
+    width: 300px;
+}
+.lp-content-form-button button{
+    width: 100%;
+    color:#1D9BF0;
+    background: none;
+    border: solid #536471;
+    border-radius: 100px;
+    padding: 8px 0;
+    font-size: 15px;
+    cursor: pointer;
+}
+.lp-content-form-button p{
+    font-size: 11px;
+    color: #71767B;
+    margin-bottom: 20px;
+}
+
+/* Sign in form error classes with javascript */
+.signin-error input{
+    border: solid #d00000;
+}
+.lp-content-form-error{
+    margin-bottom: 10px;
+}
+.lp-content-form-error p{
+    font-size: 11px;
+    color:#d00000;
+}
+.hidden{
+    display: none;
+}
+
+
+/* Horizontal OR */
+.lp-content-divider{
+    display: flex;
+    width: 300px;
+    max-width: 380px;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 700;
+}
+.lp-content-divider div{
+    width: 100%;
+}
+.lp-content-divider-or{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Sign up button */
+.lp-content-signup{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+}
+.lp-content-signup button{
+    width: 300px;
+    color: #E7E9EA;
+    background-color: #1D9BF0;
+    border-radius: 100px;
+    font-size: 15px;
+    padding: 8px 0;
+    cursor: pointer;
+}
+.lp-content-signup p{
+    margin-bottom: 20px;
+}
+
+
+/* Landing footer section */
+.landing-footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #E7E9EA;
+    margin-top: 10px;
+
+}
+.landing-footer p{
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+
+
+/* Pop ups */
+
 
 body{
     display: flex;
@@ -868,6 +1062,126 @@ main{
 
 
 
+/* Popup 2 */
+.popup22{
+    width: 600px;
+    height: 650px;
+    background-color: #000;
+    color: #E7E9EA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.popup22-form{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.popup22-form input{
+    display: none;
+}
+.back-img{
+    background-image: url('../images/profile-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 200px;
+}
+.pop-pp{
+    background-image: url('../images/profile-pic.png');
+    background-position: center;
+    background-size: cover;
+    width: 15vw;
+    height: 15vw;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+.pop-btn{
+    width: 80%;
+}
+.pop-btn button{
+    width: 100%;
+    color: #E7E9EA;
+    background-color: #333639;
+    border-radius: 100px;
+    font-size: 15px;
+    padding: 10px 0;
+}
+.popup2-container{
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(0, 0,0, 0.6);
+    pointer-events: none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.show2{
+    pointer-events: all;
+    opacity: 1;
+}
+
+
+.bg-img-prop {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+
+/* Media queries for 800px width */
+@media only screen and (max-width: 800px){
+    .landing-page-main{
+        display: grid;
+        grid-template-areas: 
+        "g11"
+        "g21";
+        /* grid-template-rows: 80vh 20vh; */
+    }
+    .landing-page-main >*:nth-child(1){
+        grid-area: g21;
+        width: 100vw;
+    }
+    .landing-page-main >*:nth-child(2){
+        grid-area: g11;
+        padding: 0;
+        margin: 5vw;
+        width: 90vw;
+    }
+    .popup{
+        width: 100vw;
+    }
+    .popup22{
+        width: 100vw;
+    }
+
+}
+@media only screen and (max-width:400px){
+    .lp-content-header1 h1{
+        font-size: 40px;
+    }
+    .landing-footer{
+        padding: 0;
+    }
+    .landing-footer p{
+        padding: 0;
+        margin: 4px;
+    }
+}
 
 /* ------------ Media Queries ------------- */
 

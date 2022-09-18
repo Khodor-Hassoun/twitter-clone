@@ -29,13 +29,9 @@ closeBtn.addEventListener('click',()=>{
 })
 
 // registerBtn for popup2
-// registerBtn.addEventListener('click',()=>{
-//     popContainer.classList.remove('show')
-//     popContainer2.classList.add('show2')
-// })
-// imgsBtn.addEventListener('click',()=>{
-//     popContainer2.classList.remove('show2')
-// })
+imgsBtn.addEventListener('click',()=>{
+    popContainer2.classList.remove('show2')
+})
 
 
 // send the sign up info to signUp.php
@@ -60,10 +56,7 @@ registerForm.addEventListener('submit', (e)=>{
                     userName.parentElement.classList.add('signup-error');
                     phone.parentElement.classList.add('signup-error');
                     signUpSuccess = false
-
-                    // e.preventDefault()
                     return 'request invalid'
-                    // put a class to add red text as a warning
                 }
             }
             signUpSuccess = true
@@ -79,12 +72,24 @@ registerForm.addEventListener('submit', (e)=>{
             return req.json()
         })
         .then(data =>{
+            // When we know that the inputs are unique and the user is inside. Take him to popup 2
+
+            popContainer.classList.remove('show')
+            popContainer2.classList.add('show2')
             console.log('data:', data)
         })
         .catch(e=>{
             console.log('Error', e)
         })
 })
+
+// registerBtn.addEventListener('click',()=>{
+//     if(signUpSuccess){
+//         popContainer.classList.remove('show')
+//         popContainer2.classList.add('show2')
+//     }
+   
+// })
 
 
 // Send the sign in data and compare the values and return the id

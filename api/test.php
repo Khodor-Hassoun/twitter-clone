@@ -3,7 +3,7 @@
 
     include("connection.php");
 
-    $query = $mysqli->prepare("SELECT name, username, email, phone, password FROM users");
+    $query = $mysqli->prepare("SELECT id,name, username, email, phone, password FROM users");
     $query->execute();
     $array = $query->get_result();
     

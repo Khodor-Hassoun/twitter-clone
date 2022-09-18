@@ -73,10 +73,20 @@ registerForm.addEventListener('submit', (e)=>{
         })
         .then(data =>{
             // When we know that the inputs are unique and the user is inside. Take him to popup 2
-
             popContainer.classList.remove('show')
             popContainer2.classList.add('show2')
             console.log('data:', data)
+            return fetch('http://localhost/twitter-clone/api/signIn.php',
+            {
+                method:'post',
+                body: formData
+            })
+        })
+        .then(res=>{
+            return res.json()
+        })
+        .then(data=>{
+            localStorage.setItem("userId", parseInt(data.id));
         })
         .catch(e=>{
             console.log('Error', e)
@@ -111,7 +121,8 @@ signInForm.addEventListener('submit',(e)=>{
                 console.log(data)
                 signInForm.classList.remove('signin-error')
                 signInForm.childNodes[7].classList.add('hidden')
-                localStorage.setItem("userId", data.id)
+                localStorage.setItem("userId", parseInt(data.id));
+                
             }
         })
 })

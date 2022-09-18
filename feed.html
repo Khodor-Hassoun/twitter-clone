@@ -1,0 +1,166 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="styles/styles.css" rel="stylesheet">
+    <title>Twitter</title>
+</head>
+<!-- header -->
+<header>
+    <div class="flex-grow"></div>
+    <div class="nav-bar">
+        <div class="position-fixed">
+            <!-- nav links -->
+            <div class="nav-links">
+                <a href="feed.html">
+                    <i class="fa fa-twitter fa-10x twitter-logo" aria-hidden="true"></i>
+                </a>
+                <a  class="profile-link" href="profile.html">
+                    <svg height="3rem" width="2.7rem" viewBox="0 0 24 24" aria-hidden="true">
+                        <g>
+                            <path
+                                d="M22.46 7.57L12.357 2.115c-.223-.12-.49-.12-.713 0L1.543 7.57c-.364.197-.5.652-.303 1.017.135.25.394.393.66.393.12 0 .243-.03.356-.09l.815-.44L4.7 19.963c.214 1.215 1.308 2.062 2.658 2.062h9.282c1.352 0 2.445-.848 2.663-2.087l1.626-11.49.818.442c.364.193.82.06 1.017-.304.196-.363.06-.818-.304-1.016zm-4.638 12.133c-.107.606-.703.822-1.18.822H7.36c-.48 0-1.075-.216-1.178-.798L4.48 7.69 12 3.628l7.522 4.06-1.7 12.015z">
+                            </path>
+                            <path
+                                d="M8.22 12.184c0 2.084 1.695 3.78 3.78 3.78s3.78-1.696 3.78-3.78-1.695-3.78-3.78-3.78-3.78 1.696-3.78 3.78zm6.06 0c0 1.258-1.022 2.28-2.28 2.28s-2.28-1.022-2.28-2.28 1.022-2.28 2.28-2.28 2.28 1.022 2.28 2.28z">
+                            </path>
+                        </g>
+                    </svg>
+                    <span>Home</span>
+                </a>
+                <a href="">
+                    <svg height="3rem" width="2.7rem" viewBox="0 0 24 24" aria-hidden="true">
+                        <g>
+                            <path
+                                d="M12 11.816c1.355 0 2.872-.15 3.84-1.256.814-.93 1.078-2.368.806-4.392-.38-2.825-2.117-4.512-4.646-4.512S7.734 3.343 7.354 6.17c-.272 2.022-.008 3.46.806 4.39.968 1.107 2.485 1.256 3.84 1.256zM8.84 6.368c.162-1.2.787-3.212 3.16-3.212s2.998 2.013 3.16 3.212c.207 1.55.057 2.627-.45 3.205-.455.52-1.266.743-2.71.743s-2.255-.223-2.71-.743c-.507-.578-.657-1.656-.45-3.205zm11.44 12.868c-.877-3.526-4.282-5.99-8.28-5.99s-7.403 2.464-8.28 5.99c-.172.692-.028 1.4.395 1.94.408.52 1.04.82 1.733.82h12.304c.693 0 1.325-.3 1.733-.82.424-.54.567-1.247.394-1.94zm-1.576 1.016c-.126.16-.316.246-.552.246H5.848c-.235 0-.426-.085-.552-.246-.137-.174-.18-.412-.12-.654.71-2.855 3.517-4.85 6.824-4.85s6.114 1.994 6.824 4.85c.06.242.017.48-.12.654z">
+                            </path>
+                        </g>
+                    </svg>
+                    <span>Profile</span>
+                </a>
+                <button class="tweet-button">Tweet</button>
+            </div>
+            <!-- main account -->
+            <div class="main-account">
+                <a class="profile-link" href="profile.html">
+                    <img class="tweet-image feed-profile-img" src="images/profile.png" alt="profile-pic">
+                    <div class="account-details">
+                        <span id="feed-profile-name" class="account-name"></span>
+                        <span id="feed-profile-username" class="account-username"></span>
+                    </div>
+                </a>
+                <a id="logout" href="profile.html">
+                    <i class="material-icons-outlined" style="color: white;cursor: pointer;">
+                        logout
+                    </i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="main-flex">
+        <div class="main-feed">
+            <div class="main-bar home-bar">
+                <div class="home-mobile">
+                    <a href="profile.html" id="ownProfile">
+                        <img class="feed-profile-img" src="images/profile.png"></a>
+                    <span>Home</span>
+                </div>
+                <i class="material-icons-outlined">
+                    auto_awesome
+                </i>
+            </div>
+            <div class="new-tweet">
+                <img class="tweet-image feed-profile-img" src="images/profile.png" alt="profile-pic">
+                <div class="new-tweet-details">
+                    <input type="text" id="new-tweet-text" placeholder="What's happening?">
+                    <div class="new-tweet-actions">
+                        <ul>
+                            <li>
+                                <input type="file" id="new-tweet-images" accept="image/png" style="display: none;"
+                                    multiple>
+                                <label for="new-tweet-images"><i class="material-icons-outlined">
+                                        image
+                                    </i></label>
+                            </li>
+                        </ul>
+                        <button class="tweet-button" id="tweet">Tweet</button>
+                    </div>
+                </div>
+            </div>
+            <div id="main-feed">
+            </div>
+        </div>
+        <div class="side-feed">
+            <div class="search">
+                <input id="search" type="text" placeholder="Search Twitter">
+            </div>
+            <div id="search-results" class="search-results">
+                <div id="noSearch" class="empty-search">
+                    <p>Try searching for people.</p>
+                </div>
+            </div>
+            <div class="follow">
+                <h1 class="h1-title">Who to follow</h1>
+                <div class="follow-profile">
+                    <div class="follow-container">
+                        <img class="tweet-image" src="images/profile.png" alt="profile">
+                        <div class="follow-details">
+                            <a href="">
+                                Sarah zaidan
+                            </a>
+                            <span>@sarah2_ <span id="follows">Follows you</span></span>
+                        </div>
+                    </div>
+                    <button class="tweet-button">Follow</button>
+                </div>
+                <div class="follow-profile">
+                    <div class="follow-container">
+                        <img class="tweet-image" src="images/profile.png" alt="profile">
+                        <div class="follow-details">
+                            <a href="">
+                                Ali G3aydan
+                            </a>
+                            <span>@Ali.34_<span id="follows">Follows you</span></span>
+                        </div>
+                    </div>
+                    <button class="tweet-button">Follow</button>
+                </div>
+                <a href="" class="show-more">Show more</a>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-navbar">
+        <ul class="flex-row">
+            <li class="flex-row"><a href="feed.html">
+                    <svg height="3rem" width="2.7rem" viewBox="0 0 24 24" aria-hidden="true">
+                        <g>
+                            <path
+                                d="M22.46 7.57L12.357 2.115c-.223-.12-.49-.12-.713 0L1.543 7.57c-.364.197-.5.652-.303 1.017.135.25.394.393.66.393.12 0 .243-.03.356-.09l.815-.44L4.7 19.963c.214 1.215 1.308 2.062 2.658 2.062h9.282c1.352 0 2.445-.848 2.663-2.087l1.626-11.49.818.442c.364.193.82.06 1.017-.304.196-.363.06-.818-.304-1.016zm-4.638 12.133c-.107.606-.703.822-1.18.822H7.36c-.48 0-1.075-.216-1.178-.798L4.48 7.69 12 3.628l7.522 4.06-1.7 12.015z">
+                            </path>
+                            <path
+                                d="M8.22 12.184c0 2.084 1.695 3.78 3.78 3.78s3.78-1.696 3.78-3.78-1.695-3.78-3.78-3.78-3.78 1.696-3.78 3.78zm6.06 0c0 1.258-1.022 2.28-2.28 2.28s-2.28-1.022-2.28-2.28 1.022-2.28 2.28-2.28 2.28 1.022 2.28 2.28z">
+                            </path>
+                        </g>
+                    </svg>
+                </a></li>
+            <li class="flex-row"><a href="search.html"><svg height="3rem" width="2.7rem" viewBox="0 0 24 24" aria-hidden="true">
+                        <g>
+                            <path
+                                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                            </path>
+                        </g>
+                    </svg></a></li>
+        </ul>
+    </div>
+</main>
+<script src="scripts/index.js"></script>
+<script src="scripts/search-logout.js"></script>
+</body>
+
+</html>
